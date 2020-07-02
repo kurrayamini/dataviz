@@ -1,0 +1,6 @@
+1. I am using Visual Studio Code (not mandatory)
+2. Run main.py
+3.In Webbrowser type http://localhost:5000/
+How to find console of JS
+Ctrl Shift J
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic
