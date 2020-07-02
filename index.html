@@ -1,32 +1,41 @@
-from flask import Flask, render_template, redirect
+{% extends "layout.html" %}
+{% block title %}Amazon Reviews{% endblock %}
+{% block content %}
+<style>
+    
+    .jumbotron {
+        background-color: rgb(212, 188, 203);            /* Blue background */        
+        width: 100%;
+        height: 75%;
+        
+    }
+
+</style>
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1>Data Visualization for Amazon Reviews</h1>
+    </div>
+</div>
+<br></br>
+<p style="color:rgb(2, 56, 56)" font-size:60px> 
+            The Amazon Reviews Dashboard allows us to observe temporal and categorical trends over the Amazon Review dataset. The customer can get insight regarding the different reviews in multiple categories of Amazon products. The following visualizations have been extracted from the <a href="http://deepyeti.ucsd.edu/jianmo/amazon/index.html" target="_blank">Amazon Review Dataset </a> by Jianmo Ni, UCSD. 
+            <br></br>
+            The Amazon Review dataset contains the review and product metadata from customers who have purchased and written a review about the product.
+            <br></br>
+            The review can be from a verified source or a non-verified source, have positive or negative connotation, occur more frequently in certain months of the year etc. Therefore, our motivation behind the project is to provide meaningful insight to the end-user (customer) about the different trends in reviews over different categories in Amazon.
+            <br></br>
+            We will be analyzing the reviews of the following products/categories from Amazon:
+</p>
+<ol>
+    <li><h6 style="color:darkcyan" font-style="italic"> <a href="./Beauty"> All Beauty</a></h6></li>
+    <li><h6  style="color:darkcyan" font-style="italic"> Prime Pantry</h6></li>
+    <li><h6  style="color:darkcyan" font-style="italic"> Musical Instruments</h6></li>
+    <li><h6  style="color:darkcyan" font-style="italic"> Software</h6></li>
+</ol>
 
 
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-   return render_template('index.html')
 
 
-@app.route("/Beauty")
-def topic1():
-   return render_template("Beauty.html")
-   #return redirect("https://public.tableau.com/views/CO2EmiisionPerCapita-Tutorial1/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link")
+   
+{% endblock %}
 
-
-@app.route("/Pantry")
-def topic2():
-   return render_template("Pantry.html")
-
-
-@app.route("/Instrument")
-def topic3():
-   return render_template("Instrument.html")
-
-@app.route("/Software")
-def topic4():
-   return render_template("Software.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
